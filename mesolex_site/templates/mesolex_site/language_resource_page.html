@@ -4,10 +4,6 @@
 {% load static %}
 {% load wagtailcore_tags %}
 
-{% block extra-head %}
-<link rel="stylesheet" href="{% static 'dist/site.bundle.css' %}" />
-{% endblock extra-head %}
-
 {% block content %}
 {{ page.body|richtext }}
 {% endblock content %}

@@ -4,10 +4,6 @@
 {% load static %}
 {% load wagtailcore_tags %}
 
-{% block extra-head %}
-<link rel="stylesheet" href="{% static 'dist/site.bundle.css' %}" />
-{% endblock extra-head %}
-
 {% block content %}
 <div class="test-formset-form">
     {% include 'query_builder/includes/query_builder.html' with query_builder_action=page.url query_builder_formset=search.formset query_builder_form_id='search-form' query_builder_formset_global_filters_form=search.formset_global_filters_form %}
@@ -182,6 +178,5 @@
 
 {% block extra-js %}
 {{ block.super }}
-<script src="{% static 'dist/vendors.bundle.js' %}"></script>
 <script src="{% static 'dist/dataSearch.bundle.js' %}"></script>
 {% endblock extra-js %}

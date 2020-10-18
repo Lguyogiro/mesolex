@@ -1,5 +1,6 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -20,30 +21,32 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
+        test: /\.(scss)$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                precss,
+                autoprefixer,
+              ],
             },
-            'postcss-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
-          ],
-        }),
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
     ],
   },
   entry: {
-    site: path.join(__dirname, 'mesolex/static/scss/index.scss'),
+    site: path.join(__dirname, 'mesolex/static/js/index.js'),
     dataSearch: path.join(__dirname, 'mesolex_site/static/mesolex_site/ts/search.tsx'),
   },
   output: {
@@ -70,9 +73,4 @@ module.exports = {
       'plyr-src': path.resolve(__dirname, 'node_modules/plyr/src/'),
     },
   },
-  plugins: [
-    new ExtractTextPlugin({
-      filename: '[name].bundle.css',
-    }),
-  ],
 };
