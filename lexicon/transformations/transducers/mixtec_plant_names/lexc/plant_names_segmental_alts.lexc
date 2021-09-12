@@ -1,0 +1,49 @@
+LEXICON Root
+Loop ; 
+
+LEXICON Loop
+a Loop ;
+b Loop ;
+c  Loop ;
+d  Loop ;
+e  Loop ;
+f  Loop ;
+g  Loop ;
+h  Loop ;
+i  Loop ;
+j  Loop ;
+k  Loop ;
+l  Loop ;
+m  Loop ;
+n  Loop ;
+
+nd:nt Loop ;
+nt:nd Loop ;
+
+ñ  Loop ;
+o  Loop ;
+p  Loop ;
+r  Loop ;
+
+s:s  Loop ;
+s:z  Loop ;
+
+t  Loop ;
+u  Loop ;
+v  Loop ;
+w  Loop ;
+x  Loop ;
+y  Loop ;
+
+z:z  Loop ;
+z:s  Loop ;
+
+1  Loop ;
+2  Loop ;
+3  Loop ;
+4  Loop ;
+¹ Loop ;
+² Loop ;
+³ Loop ;
+⁴ Loop ;
+# ;
